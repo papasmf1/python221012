@@ -13,3 +13,38 @@ def intersect(prelist, postlist):
 #호출
 print( intersect("HAM", "SPAM") )
 
+print("---지역변수,전역변수---")
+#전역변수
+x = 5 
+def func1(a):
+    return a+x 
+
+#호출
+print( func1(1) )
+
+def func2(a):
+    #지역변수
+    x = 2 
+    return a+x 
+
+#호출
+print( func2(1) )
+
+#참조를 전달하는 방식(입력+출력)
+wordlist = ["J","A","M"]
+def change(x):
+    x[0] = "H"
+#호출
+change(wordlist)
+print("함수 호출후:{0}".format(wordlist))
+
+#복사본 사용
+wordlist = ["J","A","M"]
+def change(x):
+    #Deep copy(진짜 복사본 생성) 지역변수
+    x1 = x[:]
+    x1[0] = "H"
+    print("함수 내부:{0}".format(x1))
+#호출
+change(wordlist)
+print("함수 호출후:{0}".format(wordlist))
