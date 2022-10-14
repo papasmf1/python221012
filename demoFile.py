@@ -17,7 +17,7 @@ print("{0:,}".format(1500000))
 
 #파일 쓰기(유니코드로 저장)
 f = open("c:\\work\\demo.txt", "wt", encoding="utf-8")
-f.write("하나\n둘\n셋\n")
+f.write("첫번째\n두번째\n세번째\n")
 f.close() 
 
 #파일 읽기
@@ -28,7 +28,8 @@ print( f.tell() )
 #리셋(다시 처음)
 f.seek(0)
 print("---readline()---")
-print( f.readline(), end="" )
+result = f.readline() 
+print( result.replace("\n", "") )
 print( f.readline(), end="" )
 #리셋(다시 처음)
 f.seek(0)
